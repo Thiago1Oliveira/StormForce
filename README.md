@@ -4,6 +4,10 @@
   <img src="https://i.imgur.com/H9rz6mx.png" alt="Imagem logo" />
 </p>
 
+O Storm Force é um projeto de IoT desenvolvido para monitorar e registrar dados de umidade e temperatura de forma eficiente e em tempo real. Utilizando o microcontrolador ESP32, um sensor DHT11 e o protocolo MQTT (via broker Mosquitto), este sistema permite a coleta e publicação de dados em uma rede local ou na nuvem, facilitando o monitoramento remoto e a automação de processos.
+
+
+
 ## Requisitos de Hardware
 
 - ESP32
