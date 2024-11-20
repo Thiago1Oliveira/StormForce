@@ -1,0 +1,231 @@
+[
+    {
+        "id": "ac23d3e1b4b4430c",
+        "type": "tab",
+        "label": "Stylish Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "29519032287a533f",
+        "type": "mqtt in",
+        "z": "ac23d3e1b4b4430c",
+        "name": "ESP32 Temperature",
+        "topic": "esp32/temperature",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "a529d5b1b0db77e7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "45377d90116ba42c",
+                "ec279001ecb1b086"
+            ]
+        ]
+    },
+    {
+        "id": "45377d90116ba42c",
+        "type": "ui_gauge",
+        "z": "ac23d3e1b4b4430c",
+        "name": "Temperature Gauge",
+        "group": "6e301ab755fe23c3",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "gtype": "donut",
+        "title": "Temperature [°C]",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 50,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "40",
+        "x": 400,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ec279001ecb1b086",
+        "type": "ui_chart",
+        "z": "ac23d3e1b4b4430c",
+        "name": "Temperature Chart",
+        "group": "5797b5acbc5ca330",
+        "order": 1,
+        "width": 12,
+        "height": 6,
+        "label": "Temperature Over Time",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Waiting for data...",
+        "dot": false,
+        "ymin": 0,
+        "ymax": 50,
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "hour",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff9800",
+            "#b4da55",
+            "#ca3838"
+        ],
+        "outputs": 1,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e8543690827c69c",
+        "type": "mqtt in",
+        "z": "ac23d3e1b4b4430c",
+        "name": "ESP32 Humidity",
+        "topic": "esp32/humidity",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "a529d5b1b0db77e7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "5c89f5887a53d62a",
+                "81d6860f3f22f08f"
+            ]
+        ]
+    },
+    {
+        "id": "5c89f5887a53d62a",
+        "type": "ui_gauge",
+        "z": "ac23d3e1b4b4430c",
+        "name": "Humidity Gauge",
+        "group": "6e301ab755fe23c3",
+        "order": 2,
+        "width": 6,
+        "height": 6,
+        "gtype": "donut",
+        "title": "Humidity [%]",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#3399ff",
+            "#66ccff",
+            "#0066cc"
+        ],
+        "seg1": "60",
+        "seg2": "90",
+        "x": 400,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "81d6860f3f22f08f",
+        "type": "ui_chart",
+        "z": "ac23d3e1b4b4430c",
+        "name": "Humidity Chart",
+        "group": "5797b5acbc5ca330",
+        "order": 2,
+        "width": 12,
+        "height": 6,
+        "label": "Humidity Over Time",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Waiting for data...",
+        "dot": false,
+        "ymin": 0,
+        "ymax": 100,
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "hour",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#3399ff",
+            "#66ccff",
+            "#0066cc"
+        ],
+        "outputs": 1,
+        "x": 410,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a529d5b1b0db77e7",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker",
+        "broker": "10.0.42.169",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6e301ab755fe23c3",
+        "type": "ui_group",
+        "name": "Sensor Data",
+        "tab": "1c2bfa3c38a5dc44",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false
+    },
+    {
+        "id": "5797b5acbc5ca330",
+        "type": "ui_group",
+        "name": "Charts",
+        "tab": "1c2bfa3c38a5dc44",
+        "order": 2,
+        "disp": true,
+        "width": 12,
+        "collapse": false
+    },
+    {
+        "id": "1c2bfa3c38a5dc44",
+        "type": "ui_tab",
+        "name": "ESP32 Dashboard",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
